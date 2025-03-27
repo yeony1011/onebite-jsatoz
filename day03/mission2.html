@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미션2. 함수 작성하기</title>
+</head>
+<body>
+  <script>
+    const book = {
+      title: '어린왕자',
+      author: '생텍쥐페리',
+      getSummary: function(){
+        return `책 정보 - 책제목 : ${this.title}, 저자 : ${this.author}`;
+      }
+    };
+    console.log(book.getSummary());
+  </script>
+</body>
+</html>
