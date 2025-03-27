@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미션3. 스코프와 함수</title>
+</head>
+<body>
+  <script>
+    function sumNumbers(a, b) {
+      function addFive(number) {
+        return number = b + 5;
+      }
+      return sum = a + addFive(b);
+    }
+    console.log(sumNumbers(3, 7)); // 출력: 15 (7에 5를 더한 후 3을 더함)
+    console.log(sumNumbers(10, 5)); // 출력: 20 (5에 5를 더한 후 10을 더함)```
+  </script>
+</body>
+</html>
