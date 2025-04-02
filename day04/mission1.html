@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미션1. 배열, 객체, 반복문</title>
+</head>
+<body>
+  <script>
+    let foods = [
+      { name: 'Burger', calories: 800 },
+      { name: 'Apple', calories: 52 },
+      { name: 'Pizza', calories: 550 },
+      { name: 'Salad', calories: 150 },
+    ];
+
+    // 첫번째 방법
+    // const calories500 = foods.filter((el) => el.calories > 500);
+    // calories500.forEach((el) => {
+    //   console.log(el.name);
+    // });
+
+    // 점표기법으로 변경
+    foods.filter((food) => food.calories > 500).forEach((food) => console.log(food.name));
+  </script>
+</body>
+</html>
