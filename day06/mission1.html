@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미션1. API 호출1</title>
+</head>
+<body>
+  <script>
+    function fakeApiCall() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve({ name: 'John Doe', age: 30 });
+        }, 2000);
+      });
+    }
+
+    const fetchUserData = async () => {
+      try{
+        let result = await fakeApiCall();
+        console.log(result.name);
+      }catch(err){
+        console.log(err);
+      }
+    }
+
+    fetchUserData();
+  </script>
+</body>
+</html>

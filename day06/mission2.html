@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미션2. API 호출2</title>
+</head>
+<body>
+  <script>
+    const getData = async () => {
+      try{
+        const API_URL = await fetch('https://pokemon-api-ecru-eta.vercel.app');
+        const data = await API_URL.json();
+        const pokemonArr = data.data;
+        const greenPokemon = pokemonArr.filter((pokemon) => pokemon.color === 'green');
+        console.log(greenPokemon);
+      }catch(err){
+        console.log(err);
+      }
+    }
+    getData();
+  </script>
+</body>
+</html>
