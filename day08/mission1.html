@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>미션1. 자바스크립트의 this</title>
+</head>
+<body>
+  <script>
+    const obj = {
+      value: 42,
+      regularFunction: function () {
+        console.log(this.value); // 여기서 this는 무엇을 가리키나요?
+        // 일반함수 사용과 메서드 호출 방식으로 this는 메서드를 포함하는 obj 객체를 가리킴
+      },
+      // arrowFunction: () => {
+      //   console.log(this.value); // 여기서 this는 무엇을 가리키나요?
+      //   // 화살표함수 사용과 메서드 호출 방식으로 this는 상위 스코프인 전역 객체인 window를 가리킴
+      // },
+      arrowFunction: function(){
+        console.log(this.value);
+      }
+  };
+
+  obj.regularFunction(); // 출력: 42
+  obj.arrowFunction(); // 출력: undefined (이유를 설명해보세요)
+  // 전역 객체인 window에 value라는 프로퍼티가 없기 때문에 undefined 출력
+
+  // this는 자신을 포함하고 있는 함수가 어떻게 호출하는지에 따라 값이 달라짐
+  // 호출방식 : 일반함수, 메서드, 생성자함수, 콜백함수
+  // 일반함수 호출 - 전역 객체 window 가리킴
+  // 메서드 호출 - 메서드를 포함하고 있는 객체를 가리킴
+  // 생성자함수 호출 - 생성자 함수가 새로 생성할 인스턴스를 가리킴
+  // 콜백함수 호출 - 전역 객체 window 가리킴
+  // 단, 화살표함수에서 this는 함수가 정의된 시점에서 상위 스코프의 this를 가리킴 (= 렉시컬 스코프와 유사)
+  </script>
+</body>
+</html>
